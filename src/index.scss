@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); //Es una hoja de estilo->Para iconos
+
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+
+}
+.navbar h1{
+  color:white;
+}
+.navbar{
+  margin-top: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: rgb(95, 68, 68);
+  &__link{
+    text-decoration: none;
+    color:white;
+  }
+}
+.container{
+  display: flex;
+  position: relative;
+  color:white;
+  margin-right: 2em;
+  .number{
+    background-color: black;
+    border-radius: 100%;
+    padding: 0.2em;
+    font-size: 13px;
+    font-weight: 800;
+    position: absolute;
+    left: 80%;
+    transform: translateY(-5px);
+    
+    
+  }
+}
+.div-greeting{
+  box-shadow: 5px 5px 5px 5px;
+  width: 50%;
+  margin: 15px auto;
+  padding: 0.5em;
+  font-size: 20px;
+ letter-spacing: 2px;
+ font-weight: 800;
+}
