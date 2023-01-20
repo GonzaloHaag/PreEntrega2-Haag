@@ -8,11 +8,13 @@
   box-sizing: border-box;
 
 }
-.navbar h1{
+.navbar-title{
   color:white;
+  
+  
 }
 .navbar{
-  margin-top: 2.5em;
+   margin-top: 1.2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,10 +45,36 @@
 }
 .div-greeting{
   box-shadow: 5px 5px 5px 5px;
-  width: 50%;
+  width: 30%;
   margin: 15px auto;
   padding: 0.5em;
   font-size: 20px;
  letter-spacing: 2px;
  font-weight: 800;
+ text-align: center;
+}
+.products-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  .product-container{
+  
+    width: 20%;
+    text-align: center;
+    
+   h3{
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 1.2em;
+    
+   }
+   p{
+     font-weight: 800;
+   }
+  }
 }

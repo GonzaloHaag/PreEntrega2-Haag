@@ -1,12 +1,17 @@
 
 import Navbar from "./Navbar"; 
 import ItemListContainer from "./ItemListContainer";
-function App() {
+import {BrowserRouter, Route,Routes} from "react-router-dom";
+import Main from "./Main"
+
+const App = () => {
   return (
-    <>
+    <BrowserRouter>
     <Navbar/>
-    <ItemListContainer greeting = "BIENVENIDO AL POCHO MATES,EMPRESA DEDICADA A LA VENTA DE MATES Y ACCESORIOS PERSONALIZADOS"/>
-    </>
+    {/* <ItemListContainer greeting = "BIENVENIDO AL POCHO MATES,EMPRESA DEDICADA A LA VENTA DE MATES Y ACCESORIOS PERSONALIZADOS"/> */}
+    <Main/>
+   
+    </BrowserRouter>
   )
  
   
