@@ -7,9 +7,9 @@ const Navbar = () => {
             <Link to="/">
                 <h1 className="navbar-title">LaloStore</h1>
             </Link>
-            <NavLink className="navbar__link" to="/category/:categoryId">Productos</NavLink>
-            <NavLink className="navbar__link" to="/category/:categoryId" >Categorias</NavLink>
-            <NavLink className="navbar__link" to="/category/:categoryId" >Contacto</NavLink>
+            <NavLink className="navbar__link" to="/category/women's clothing">women's clothing</NavLink>
+            <NavLink className="navbar__link" to="/category/electronics" >electronics</NavLink>
+            <NavLink className="navbar__link" to="/category/men's clothing" >men's clothing</NavLink>
             <CartWidget/>
         </nav>
         
