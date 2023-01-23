@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     const [productosApi,setProductosApi] = useState([]);
-    // const {category} = useParams();
-    const category = productosApi.category;
+    const{id} = useParams();
+   
+   
+   
 
     
     useEffect(()=>{
@@ -31,18 +33,16 @@ const ItemListContainer = () => {
         .then(respuesta=>respuesta.json())
         .then(resultado=>{
             setProductosApi([]) //Limpia memoria de los productos que tenia antes
-            if(category===undefined) {
+            if(id===undefined) {
                 setProductosApi(resultado)
             }
             else{
-                setProductosApi(resultado.filter((producto)=>{
-                    return producto.category === category;
-                }))
+                setProductosApi(resultado.filter((producto)=> producto.category === id))
             }
         })
        
 
-    },[category]); //Recordar [], para que solo se ejecute una vez
+    },[id]); //Recordar [], para que solo se ejecute una vez
 
     
 
