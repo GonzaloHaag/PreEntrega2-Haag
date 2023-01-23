@@ -4,44 +4,52 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     const [productosApi,setProductosApi] = useState([]);
-    const {category} = useParams();
-    
+    // const {category} = useParams();
+    const category = productosApi.category;
 
     
     useEffect(()=>{
 
-        const pedidoProductos = fetch('https://fakestoreapi.com/products'); 
-       
-
-        pedidoProductos.then((respuesta)=>{
-            const productos = respuesta.json();
-            console.log(productos); //Array de 20 productos
-            
-            return productos
-        })
+        // const pedidoProductos = fetch('https://fakestoreapi.com/products'); 
       
-        .then((productos)=>{
-            console.log(productos);
-            setProductosApi(productos);
+       
 
+        // pedidoProductos.then((respuesta)=>{
+        //     const productos = respuesta.json();
+        //     console.log(productos); //Array de 20 productos
+            
+        //     return productos
+        // })
+      
+        // .then((productos)=>{
+        //     console.log(productos);
+        //     setProductosApi(productos);
+
+        // })
+        const url = "https://fakestoreapi.com/products";
+        fetch(url)
+        .then(respuesta=>respuesta.json())
+        .then(resultado=>{
+            setProductosApi([]) //Limpia memoria de los productos que tenia antes
+            if(category===undefined) {
+                setProductosApi(resultado)
+            }
+            else{
+                setProductosApi(resultado.filter((producto)=>{
+                    return producto.category === category;
+                }))
+            }
         })
        
 
-    },[]); //Recordar [], para que solo se ejecute una vez
+    },[category]); //Recordar [], para que solo se ejecute una vez
 
-    const filtredProducts = productosApi.filter(product=>product.category===category);
+    
 
     return(
         <div>
             <ItemList productosDeApi = {productosApi}/>
-            <h1>Product List</h1>
-            <ul>
-                {filtredProducts.map(product=>{
-                    <li key={product.id}>
-                        {product.name}
-                    </li>
-                })}
-            </ul>
+            {/* <h1>Product List</h1> */}
             
         </div>
     );

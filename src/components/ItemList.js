@@ -5,7 +5,9 @@ const ItemList = ({productosDeApi}) =>{
         <div className="products-container">
             {productosDeApi.map((producto)=>{
                 return(
+                    
                     <Item producto = {producto} key={producto.id}/>
+                  
                 )
             })}
         </div>
