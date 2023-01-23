@@ -15,7 +15,7 @@ const ItemDetailContainer = (producto) => {
       setProductoApi(resultado)
     })
   },[id]);
-  console.log(productoApi);
+  // console.log(productoApi);
 
   return(
       <div>
