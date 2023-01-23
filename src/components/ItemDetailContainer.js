@@ -1,10 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (producto) => {
 
   return(
-      <div>ItemDetailsContainer</div>
+      <div>
+        <h1>ItemDetailContainer</h1>
+      </div>
   )
 }
 
